@@ -13,18 +13,23 @@ public class Bicicleta {
         String marca = "Orbea";
     }
     
+    /*
+        Metodo que mide la longitud total de cada camino de forma idividal.
+    */
+    public static int longitud(int[] camino){
+        int sum =0;
+        for(int i=0; i<camino.length; i++){
+            sum += camino[i];
+        }
+        return sum;
+    }
+    
     public static String rutaCorta(int [] camino1, int [] camino2, int [] camino3)
     {
-        int sum1 = 0;
-        int sum2 = 0;
-        int sum3 = 0;
-        
-        for(int i=0; i<camino1.length; i++)
-        {
-            sum1 += camino1[i];
-            sum2 += camino2[i];
-            sum3 += camino3[i];
-        }
+        //Se cambia el valor que tendran las sumas por la funcion longitud.
+        int sum1 = longitud(camino1);
+        int sum2 = longitud(camino2);
+        int sum3 = longitud(camino3);
         
         if(sum1 < sum2 && sum1 < sum3)
         {
